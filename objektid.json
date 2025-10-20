@@ -1,0 +1,83 @@
+[
+  {
+    "id": 1,
+    "title": "My first post",
+    "author": "Stacy",
+    "created_at": "2025-10-19T10:00:00",
+    "content": "This is my very first post!",
+    "likes": 15
+  },
+  {
+    "id": 2,
+    "title": "Autumn vibes",
+    "author": "Henry",
+    "created_at": "2025-10-18T18:30:00",
+    "content": "Loving the autumn colors outside.",
+    "likes": 23
+  },
+  {
+    "id": 3,
+    "title": "Weekend plans",
+    "author": "Arno",
+    "created_at": "2025-10-17T14:10:00",
+    "content": "Going hiking this weekend!",
+    "likes": 42
+  },
+  {
+    "id": 4,
+    "title": "Beautiful weather",
+    "author": "Stacy",
+    "created_at": "2025-10-17T17:10:50",
+    "content": "I love Estonia!",
+    "likes": 42
+  },
+  {
+    "id": 5,
+    "title": "I love my dog",
+    "author": "Henri",
+    "created_at": "2025-11-17T20:10:40",
+    "content": "I am a pet lover, sometimes!",
+    "likes": 42
+  },
+  {
+    "id": 6,
+    "title": "School is killing me",
+    "author": "Arno",
+    "created_at": "2025-05-17T15:00:30",
+    "content": "Waiting for summer break",
+    "likes": 42
+  },
+  {
+    "id": 7,
+    "title": "Volleyball",
+    "author": "Stacy",
+    "created_at": "2025-07-17T20:35:00",
+    "content": "Hello everyone",
+    "likes": 42
+  },
+  {
+    "id": 8,
+    "title": "Improvising",
+    "author": "Henry",
+    "created_at": "2025-10-17T21:27:05",
+    "content": "Just got internship, yippieee",
+    "likes": 50
+  },
+  {
+    "id": 9,
+    "title": "Time with family",
+    "author": "Arno",
+    "created_at": "2025-10-17T23:20:00",
+    "content": "Love them",
+    "likes": 23
+  },
+  {
+    "id": 10,
+    "title": "Grinding for test",
+    "author": "Stacy",
+    "created_at": "2025-11-17T22:10:00",
+    "content": "Help...",
+    "likes": 56
+  }
+
+]
