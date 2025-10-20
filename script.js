@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    const onlineJsonUrl = 'https://api.jsonbin.io/v3/b/68f607fad0ea881f40ae1107';
+    const onlineJsonUrl = 'https://json.extendsclass.com/bin/2b315a9c4507';
     const postsContainer = document.querySelector('.posts-feed');
 
     const createPostHTML = (post) => { // loob ühe postituse HTML-i
@@ -11,10 +11,10 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="post">
                 <div class="post-header">
                     <i class="fas fa-user-circle"></i> <!-- See on praegu staatiline ikoon nagu sinu näites -->
-                    <span class="post-date">${new Date(post.date).toLocaleDateString('et-EE')}</span>
+                    <span class="post-date">${new Date(post.created_at).toLocaleDateString('et-EE')}</span>
                 </div>
                 ${postImageHTML} <!-- Lisame pildi HTML-i ainult siis, kui pilt on olemas -->
-                <div class="post-text">${post.text}</div>
+                <div class="post-text">${post.content}</div>
                 <div class="post-actions">
                     <i class="fas fa-thumbs-up"></i>
                 </div>
