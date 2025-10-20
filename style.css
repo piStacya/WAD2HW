@@ -1,0 +1,389 @@
+/* General body styling */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* Light gray background for the overall page */
+    display: flex;
+    justify-content: center; /* Center the container horizontally */
+    align-items: flex-start; /* Align to the top of the viewport */
+    min-height: 100vh; /* Ensure body takes full viewport height */
+    padding: 20px 0; /* Vertical padding around the main container */
+    box-sizing: border-box; /* Include padding in element's total width and height */
+}
+
+/* Class Selector: Main container for the entire layout */
+.container {
+    width: 100%;
+    max-width: 900px; /* Maximum width for the layout, as seen in the image */
+    display: grid;
+    grid-template-rows: auto 1fr auto; /* Header, Main Content, Footer */
+    background-color: #e0e0e0; /* Slightly darker grey for the container itself, acting as a border */
+    border-radius: 8px; /* Rounded corners for the entire layout */
+    overflow: hidden; /* Ensures content within follows the border-radius */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Header styling */
+header {
+    background-color: #d3d3d3; /* Header background color */
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between; /* Space out "Home | addPost" and the user icon */
+    align-items: center;
+    border-bottom: 1px solid #bbb; /* Separator line at the bottom of the header */
+    border-radius: 8px 8px 0 0; /* Rounded top corners only */
+}
+
+.header-left {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Class Selector & Pseudo-class: Navigation items hover effect */
+.nav-item {
+    color: #333;
+    text-decoration: none;
+    padding: 5px 8px; /* Add padding for better hover area */
+    border-radius: 4px; /* Slightly rounded corners for hover background */
+    transition: background-color 0.3s ease; /* Smooth transition for hover */
+}
+
+.nav-item:hover { /* Pseudo-class for hover effect */
+    background-color: #c0c0c0; /* Change background on hover */
+    color: #000;
+}
+
+.nav-separator {
+    margin: 0 5px;
+    color: #777;
+}
+
+/* Styling for the login link and its icon */
+.header-right .login-link {
+    text-decoration: none; /* Remove underline from the link */
+    color: inherit; /* Inherit color, or set explicitly */
+    display: flex; /* To align the icon properly if there was text */
+    align-items: center;
+}
+
+.header-right .login-link .fa-user-circle { /* Descendant selector for icon within the login link */
+    font-size: 1.8em; /* Larger user icon in the header */
+    color: #555;
+    transition: color 0.2s ease; /* Smooth transition for hover effect */
+}
+
+.header-right .login-link:hover .fa-user-circle { /* Pseudo-class for hover effect on the icon */
+    color: #333; /* Darken icon on hover */
+}
+
+
+/* ID Selector: Main content area styling */
+#mainContent {
+    display: grid;
+    grid-template-columns: 200px 1fr 200px; /* Left sidebar (200px), Posts Feed (flexible), Right sidebar (200px) */
+    gap: 20px; /* Gap between the columns */
+    padding: 20px;
+    background-color: #f0f0f0; /* Background color for the main content area */
+}
+
+/* Sidebar styling */
+.left-sidebar,
+.right-sidebar {
+    background-color: #d3d3d3; /* Sidebar background color */
+    padding: 15px;
+    border-radius: 8px;
+    color: #333;
+    height: fit-content; /* Adjust height to content, preventing full column stretch */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Subtle shadow for sidebars */
+}
+
+/* Descendant Selector: Styling paragraphs within the left sidebar */
+.left-sidebar p {
+    margin-bottom: 10px;
+    line-height: 1.4;
+    color: #555; /* Slightly muted text color for instructions */
+}
+
+.left-sidebar p:last-child { /* Pseudo-class for the last paragraph */
+    margin-bottom: 0; /* No bottom margin for the last paragraph */
+}
+
+/* Posts feed styling */
+.posts-feed {
+    display: flex;
+    flex-direction: column; /* Stack posts vertically */
+    gap: 20px; /* Gap between individual posts */
+}
+
+/* Individual post styling */
+.post {
+    background-color: #ffffff; /* Post card background */
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow for posts */
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.post-header .fa-user-circle { /* Descendant selector for icon in header */
+    font-size: 1.4em; /* User icon in post header */
+    margin-right: 10px;
+    color: #555;
+}
+
+/* Child Selector: Targeting the post date directly within the post header */
+.post-header > .post-date {
+    color: #888;
+    font-size: 0.85em;
+}
+
+.post-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px; /* Slight rounded corners for the image */
+    margin-bottom: 10px;
+    display: block; /* Remove extra space below the image */
+}
+
+/* Adjacent Sibling Selector: Styling text that immediately follows an image */
+.post-image + .post-text {
+    margin-top: 5px; /* Add a little extra space if text directly follows an image */
+    font-style: italic; /* Just an example style */
+}
+
+.post-text {
+    color: #333;
+    line-height: 1.5;
+    margin-bottom: 10px; /* Margin before the like button or next text block */
+}
+
+/* General Sibling Selector: Styling subsequent text blocks in a post */
+.post-text ~ .post-text {
+    margin-top: 5px; /* Add a small margin between consecutive text paragraphs in a post */
+    border-left: 2px solid #eee; /* Visual example for general sibling selector */
+    padding-left: 10px;
+}
+
+
+.post-actions {
+    text-align: right; /* Align the like button to the right */
+    padding-top: 5px; /* Padding above the actions */
+}
+
+.post-actions .fa-thumbs-up {
+    font-size: 1.3em;
+    color: #777;
+    cursor: pointer;
+    transition: color 0.2s ease; /* Smooth transition for hover effect */
+}
+.post-actions .fa-thumbs-up:hover { /* Pseudo-class for hover effect on like button */
+    color: #555; /* Darken on hover */
+}
+
+/* Footer styling */
+footer {
+    background-color: #d3d3d3; /* Footer background color */
+    padding: 15px 20px;
+    text-align: center;
+    font-weight: bold;
+    color: #333;
+    border-top: 1px solid #bbb; /* Separator line at the top of the footer */
+    border-radius: 0 0 8px 8px; /* Rounded bottom corners only */
+}
+
+/* Pseudo-element example (optional, but demonstrates usage) */
+/* Adding a small decorative line before the first paragraph in the left sidebar */
+.left-sidebar p:first-of-type::before {
+    content: "💡 "; /* Adding a lightbulb icon */
+    color: #007bff;
+    font-weight: normal;
+}
+
+
+
+/*.....................................................................................*/
+
+/* Login page css */
+#background {
+    display: flex;
+    justify-content: center; /* keskele horisontaalselt */
+    align-items: flex-start; /* pane ülaossa, mitte täpselt keskele */
+    padding-top: 60px; /* kui palju kaugusele ülaservast */
+    grid-template-columns: 200px 1fr 200px; /* Left sidebar (200px), Posts Feed (flexible), Right sidebar (200px) */
+    padding: 20px;
+    background-color: #f0f0f0; /* Background color for the main content area */
+}
+
+.loginform {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+    background-color: #d3d3d3; /* Header background color */
+    border-radius: 8px;
+    padding: 25px 35px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 280px;
+    max-width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 4px; /* Vähendatud vahed elementide vahel veelgi (poole võrra) */
+    box-sizing: border-box;
+}
+
+.loginform .welcome-message {
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-bottom: 5px; /* Jätame selle siia, et welcome-sõnum oleks teistest veidi eraldi */
+}
+
+.loginform a {
+    color: #007bff; /* Sinine link */
+    text-decoration: none;
+}
+
+.loginform a:hover {
+    text-decoration: underline;
+}
+
+.loginform p {
+    margin: 0; /* Eemaldame vaikimisi marginaali P elementidel */
+}
+
+.loginform input[type="email"],
+.loginform input[type="password"] {
+    width: calc(100% - 5px);
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.loginform button[type="submit"] {
+    background-color: #007bff; /* Sinine nupp */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    width: auto;
+    align-self: center;
+}
+
+.loginform button[type="submit"]:hover {
+    background-color: #0056b3; /* Tumedam sinine hoveril */
+}
+
+.loginform > b {
+    font-size: 20px;
+}
+
+.loginform + a {
+    font-size: 12px;
+}
+
+.loginform ~ p {
+    font-size: 12px;
+}
+/*.....................................................................................*/
+
+/* addPost page */
+
+#mainContent2 {
+    background-color: #f0f0f0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+}
+
+.add-post-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 20px;
+    width: 90%;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto; /* Ensures horizontal centering */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+
+/* Form inside the section */
+.add-post-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 16px;
+}
+
+/* Each post text or input row */
+.posttext {
+    display: flex;
+    flex-direction: column; /* stack label + input vertically on small screens */
+    gap: 6px;
+}
+
+/* File input and textarea side by side on larger screens */
+@media (min-width: 600px) {
+    .posttext {
+        flex-direction: row;
+        align-items: center;
+    }
+    .posttext label {
+        width: 30%;
+        text-align: right;
+        margin-right: 10px;
+    }
+    .posttext textarea,
+    .posttext input[type="file"] {
+        width: 70%;
+    }
+}
+
+/* Submit button container */
+.submitbutton {
+    display: flex;
+    justify-content: center;
+    margin-top: 14px;
+}
+
+/* Submit button styling */
+.add-post-form button {
+    width: 50%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for button */
+.add-post-form button:hover {
+    background-color: #0056b3;
+}
+
+.posttext + .submitbutton {
+    margin-top: 10px;
+}
+
+.posttext ~ .submitbutton {
+    border-top: 0.1px solid #ccc;
+    padding-top: 10px;
+}
+
+.add-post-form > .posttext {
+    border-top: 0.01px solid #ccc;
+    padding: 10px;
+    border-radius: 8px;
+}
+

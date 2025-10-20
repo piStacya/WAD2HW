@@ -1,0 +1,53 @@
+<!-- Author: Henri Allevi -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Post</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+  <header>
+    <div class="header-left">
+      <a href="index.html" class="nav-item">Home</a>
+      <span class="nav-separator">|</span>
+      <a href="addPost.html" class="nav-item active">addPost</a>
+    </div>
+    <div class="header-right">
+      <a href="login.html" class="login-link" title="Login / Profile">
+        <img alt="login icon" width="50" height="50" src="https://www.pinclipart.com/picdir/big/200-2008697_account-customer-login-man-user-icon-login-icon.png">
+      </a>
+    </div>
+  </header>
+
+  <main id="mainContent2">
+    <section class="add-post-section">
+      <form class="add-post-form" action="index.html" method="get">
+        <!-- Post text -->
+        <div class="posttext">
+          <label for="postText">Post body</label>
+          <textarea id="postText" name="postText" rows="4" placeholder="Write something..." required></textarea>
+        </div>
+
+        <!-- Post image -->
+        <div class="posttext">
+          <label for="postImage">Select file</label>
+          <input type="file" id="postImage" name="postImage" required>
+        </div>
+
+        <!-- Submit -->
+        <div class="submitbutton">
+          <button type="submit" class="submit-btn">Create post</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    Footer
+  </footer>
+</div>
+</body>
+</html>

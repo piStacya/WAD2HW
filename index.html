@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Social Media Feed Layout</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+  <header>
+    <div class="header-left">
+      <!-- Using anchor tags for navigation items for hover effect -->
+      <a href="index.html" class="nav-item">Home</a>
+      <span class="nav-separator">|</span>
+      <a href="addPost.html" class="nav-item">addPost</a>
+    </div>
+    <div class="header-right">
+      <a href="login.html" class="login-link" title="Login / Profile">
+        <img alt="login icon" width="50" height="50" src="https://www.pinclipart.com/picdir/big/200-2008697_account-customer-login-man-user-icon-login-icon.png">
+
+        <i class="fas fa-user-circle"></i>
+      </a>
+    </div>
+  </header>
+
+  <!-- Using an ID selector for the main content area -->
+  <main id="mainContent">
+    <aside class="left-sidebar">
+    </aside>
+
+    <section class="posts-feed">
+      <!-- Post 1 with image -->
+      <div class="post">
+        <div class="post-header">
+          <i class="fas fa-user-circle"></i>
+          <!-- Child selector example: .post-header > .post-date -->
+          <span class="post-date">Sept 22, 2024</span>
+        </div>
+        <img src="https://www.tartu.ee/sites/default/files/field/image/meeskond.jpg" alt="Tartu 2022" class="post-image">
+        <!-- Adjacent sibling selector example: .post-image + .post-text -->
+        <div class="post-text">Tartu 2024 - A beautiful day in the city square.</div>
+        <div class="post-actions">
+          <i class="fas fa-thumbs-up"></i>
+        </div>
+      </div>
+
+      <!-- Post 2 without an image -->
+      <div class="post">
+        <div class="post-header">
+          <i class="fas fa-user-circle"></i>
+          <span class="post-date">Oct 2, 2023</span>
+        </div>
+        <div class="post-text">Anyone knows in which room is the lab today? I seem to have misplaced my schedule.</div>
+        <div class="post-actions">
+          <i class="fas fa-thumbs-up"></i>
+        </div>
+      </div>
+
+      <!-- Post 3 with image and more text -->
+      <div class="post">
+        <div class="post-header">
+          <i class="fas fa-user-circle"></i>
+          <span class="post-date">Sep 15, 2023</span>
+        </div>
+        <img src="https://estonianworld.com/wp-content/uploads/2017/10/Estonia-P%C3%A4rnu-autumn-Toomas-Olev.jpg" alt="Autumn Leaves" class="post-image">
+        <div class="post-text">The autumn leaves are starting to change color, making for some stunning scenery.</div>
+        <div class="post-text">It's a perfect time for a walk in the park.</div>
+        <div class="post-actions">
+          <i class="fas fa-thumbs-up"></i>
+        </div>
+      </div>
+
+      <!-- Post 4 - A simple text update -->
+      <div class="post">
+        <div class="post-header">
+          <i class="fas fa-user-circle"></i>
+          <span class="post-date">Aug 28, 2023</span>
+        </div>
+        <div class="post-text">Just finished a great workout! Feeling refreshed and ready for the week ahead.</div>
+        <div class="post-actions">
+          <i class="fas fa-thumbs-up"></i>
+        </div>
+      </div>
+
+      <!-- Post 5 without an image -->
+      <div class="post">
+        <div class="post-header">
+          <i class="fas fa-user-circle"></i>
+          <span class="post-date">Sep 1, 2022</span>
+        </div>
+        <div class="post-text">Missing the summer already.</div>
+        <div class="post-actions">
+          <i class="fas fa-thumbs-up"></i>
+        </div>
+      </div>
+    </section>
+
+    <aside class="right-sidebar"></aside>
+  </main>
+
+  <footer>
+    Footer
+  </footer>
+</div>
+</body>
+</html>
