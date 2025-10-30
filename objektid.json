@@ -81,6 +81,24 @@
     "content": "Help...",
     "likes": 56,
     "image": "images/teineKass.jpg"
+  },
+  {
+    "id": 11,
+    "title": "Grinch is nearby",
+    "author": "Henri",
+    "created_at": "2025-11-30T22:10:00",
+    "content": "Grinch is nearby",
+    "likes": 56,
+    "image": "images/grinch.jpeg"
+  },
+  {
+    "id": 12,
+    "title": "Grinch is nearby",
+    "author": "Henri",
+    "created_at": "2025-11-30T22:10:00",
+    "content": "Grinch will steal christmas",
+    "likes": 56
   }
+  
 
 ]
