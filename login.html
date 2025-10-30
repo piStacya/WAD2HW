@@ -1,26 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Authorization</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    /* NAV + DROPDOWN minimaalne stiil */
+    header{
+      display:flex; align-items:center; justify-content:space-between;
+      background:#ddd; padding:8px 12px; position:relative;
+    }
+    .nav-item{ text-decoration:none; color:#000; margin-right:12px; }
+    .avatar-btn{
+      border:none; background:transparent; cursor:pointer; padding:0; line-height:0;
+    }
+    .avatar-btn img{ width:40px; height:40px; border-radius:50%; display:block; }
+    .account-menu{
+      position:absolute; right:12px; top:56px; min-width:200px;
+      background:#fff; border:1px solid #ccc; border-radius:8px; padding:8px;
+      box-shadow:0 8px 24px rgba(0,0,0,.12); display:none; z-index:1000;
+    }
+    .account-menu.open{ display:block; }
+    .account-item{ padding:6px 8px; font-size:14px; }
+    .account-item.logout{ color:#b00020; text-decoration:none; display:block; }
+    .account-item.logout:hover{ text-decoration:underline; }
+  </style>
 </head>
 <body>
 <div class="container">
-  <!-- HEADER -->d
+  <!-- HEADER -->
   <header>
     <div class="header-left">
       <a href="index.html" class="nav-item">Home</a>
+      <a href="addPost.html" class="nav-item">addPost</a>
     </div>
-    <div class="header-right">
-      <a href="login.html" class="login-link" title="Login / Profile">
-        <img alt="login icon" width="50" height="50" src="https://www.pinclipart.com/picdir/big/200-2008697_account-customer-login-man-user-icon-login-icon.png">
 
-        <i class="fas fa-user-circle"></i>
-      </a>
+    <div class="header-right">
+      <!-- Avatar-nupp -->
+      <button id="avatarBtn" class="avatar-btn" aria-haspopup="true" aria-expanded="false" title="Account">
+        <img alt="login icon" src="https://www.pinclipart.com/picdir/big/200-2008697_account-customer-login-man-user-icon-login-icon.png"/>
+      </button>
+
+      <!-- Dropdown-menüü -->
+      <div id="accountMenu" class="account-menu" role="menu" aria-hidden="true">
+        <div class="account-item" role="menuitem">John Doe</div>
+        <div class="account-item" role="menuitem">john.doe@ut.ee</div>
+        <a class="account-item logout" role="menuitem" href="login.html">logout</a>
+      </div>
     </div>
   </header>
+
   <div id="background">
     <form class="loginform" action="index.html">
       <b>Welcome to PostIt</b><br>
@@ -33,10 +63,36 @@
       <a href="">Forget password</a>
     </form>
   </div>
-  <!-- FOOTER -->
-  <footer>
-    Footer
-  </footer>
+
+  <footer>Footer</footer>
 </div>
+
+<script>
+  // Dropdowni loogika
+  const avatarBtn = document.getElementById('avatarBtn');
+  const accountMenu = document.getElementById('accountMenu');
+
+  function closeMenu(){
+    accountMenu.classList.remove('open');
+    accountMenu.setAttribute('aria-hidden','true');
+    avatarBtn.setAttribute('aria-expanded','false');
+  }
+  function toggleMenu(){
+    const isOpen = accountMenu.classList.toggle('open');
+    accountMenu.setAttribute('aria-hidden', String(!isOpen));
+    avatarBtn.setAttribute('aria-expanded', String(isOpen));
+  }
+
+  avatarBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    toggleMenu();
+  });
+  document.addEventListener('click', (e) => {
+    if (!accountMenu.contains(e.target) && e.target !== avatarBtn) closeMenu();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeMenu();
+  });
+</script>
 </body>
 </html>

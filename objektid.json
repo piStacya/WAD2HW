@@ -30,7 +30,8 @@
     "author": "Stacy",
     "created_at": "2025-10-17T17:10:50",
     "content": "I love Estonia!",
-    "likes": 42
+    "likes": 42,
+    "image": "images/loodus.jpg"
   },
   {
     "id": 5,
