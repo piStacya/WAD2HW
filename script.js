@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    const onlineJsonUrl = 'https://json.extendsclass.com/bin/2b315a9c4507';
+    // const onlineJsonUrl = 'https://json.extendsclass.com/bin/2b315a9c4507';
+    const onlineJsonUrl = 'objektid.json';
     const postsContainer = document.querySelector('.posts-feed');
 
     const createPostHTML = (post) => { // loob ühe postituse HTML-i
